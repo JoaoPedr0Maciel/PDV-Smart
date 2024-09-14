@@ -14,6 +14,14 @@ O **PDV Smart** é uma aplicação desenvolvida com o framework [Gin](https://gi
 - `main.go`: Código principal da aplicação.
 - Diretórios `config`, `handlers`, `routes`, `schemas`, `database`: Contêm arquivos relacionados à configuração, manipulação de dados e definição de rotas da aplicação.
 
+## Instalação
+Para iniciar clone esse repositório e logo em seguida entre no mesmo:
+```bash
+git clone https://github.com/JoaoPedr0Maciel/PDV-Smart
+
+cd pdv_smart
+```
+
 ## Construindo a Imagem Docker e subindo o container
 
 Para construir a imagem Docker da aplicação, utilize o seguinte comando:
@@ -27,7 +35,7 @@ Para subir o container, execute o seguinte comando:
 sudo docker run -d --name pdv_smart_container -p 8080:8080 pdv_smart
 ```
 
-Para subir o container dos postgres e do pgadmin, execute:
+Para subir o container do postgres e do pgadmin, execute:
 
 ```bash
 sudo docker compose up -d
