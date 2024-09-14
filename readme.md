@@ -5,8 +5,8 @@ O **PDV Smart** é uma aplicação desenvolvida com o framework [Gin](https://gi
 ## Pré-requisitos
 
 - [Docker](https://docs.docker.com/get-docker/) instalado em sua máquina.
-- [Docker Compose](https://docs.docker.com/compose/install/) (opcional, se estiver usando Docker Compose).
-- [Git](https://git-scm.com/downloads) Instalado em sua máquina.
+- [Docker Compose](https://docs.docker.com/compose/install/) instalado em sua máquina.
+- [Git](https://git-scm.com/downloads) instalado em sua máquina.
 
 ## Estrutura do Projeto
 
