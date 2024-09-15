@@ -33,7 +33,7 @@ sudo docker build -t pdv_smart .
 Para subir o container, execute o seguinte comando:
 
 ```bash
-sudo docker run -d --name pdv_smart_container -p 8080:8080 pdv_smart
+sudo docker run -d --name pdv_smart_container --network pdv_smart_app-network -p 8080:8080 pdv_smart
 ```
 
 Para subir o container do postgres e do pgadmin, execute:
