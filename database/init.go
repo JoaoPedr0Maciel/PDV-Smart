@@ -2,6 +2,7 @@ package database
 
 import (
 	"fmt"
+	"log"
 
 	"gorm.io/gorm"
 )
@@ -20,5 +21,8 @@ func InitDB() error {
 
 
 func GetDB() *gorm.DB {
+	if db == nil {
+		log.Fatal("Database connection is not initialized")
+	}
 	return db
 }

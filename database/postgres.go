@@ -1,23 +1,23 @@
+// database/database.go
 package database
 
 import (
 	"log"
-	"pdv/schemas"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
-func InitPostgres() (*gorm.DB, error){
-	dsn := "host=my_postgres_container port=5432 user=postgres password=postgres dbname=pdv_smart sslmode=disable"
-	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
-
+func InitPostgres() (*gorm.DB, error) {
+	dsn := "host=172.18.0.3 port=5432 user=postgres password=postgres dbname=pdv_smart sslmode=disable"
+	var err error
+	db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
-		log.Fatalf("Error occurred to connect to database: (%v)", err)
+		log.Fatalf("Error occurred while connecting to database: (%v)", err)
+		return nil, err
 	}
 
-	db.AutoMigrate(&schemas.User{}, &schemas.Company{})
-
 	return db, nil
-	
 }
+
+
