@@ -1,63 +1,61 @@
 # Projeto PDV Smart
 
-O **PDV Smart** é uma aplicação desenvolvida com o framework [Gin](https://github.com/gin-gonic/gin) para Go. Este README fornece instruções sobre como construir e executar a aplicação utilizando Docker.
+O PDV Smart é uma aplicação desenvolvida com o framework Gin para Go. Este README fornece instruções sobre como construir e executar a aplicação utilizando Docker.
 
 ## Pré-requisitos
-
-- [Docker](https://docs.docker.com/get-docker/) instalado em sua máquina.
-- [Docker Compose](https://docs.docker.com/compose/install/) instalado em sua máquina.
-- [Git](https://git-scm.com/downloads) instalado em sua máquina.
+- Docker instalado em sua máquina.
+- Docker Compose instalado em sua máquina.
+- Git instalado em sua máquina.
 
 ## Estrutura do Projeto
-
 - `Dockerfile` e `docker-compose.yaml`: Arquivo de configuração para construir a imagem Docker da aplicação.
 - `go.mod` e `go.sum`: Arquivos de dependência do Go.
 - `main.go`: Código principal da aplicação.
 - Diretórios `config`, `handlers`, `routes`, `schemas`, `database`: Contêm arquivos relacionados à configuração, manipulação de dados e definição de rotas da aplicação.
 
 ## Instalação
-Para iniciar clone esse repositório e logo em seguida entre no mesmo:
-```bash
-git clone https://github.com/JoaoPedr0Maciel/PDV-Smart
+1. Clone esse repositório e entre no diretório do projeto:
 
-cd pdv_smart
-```
+    ```bash
+    git clone https://github.com/JoaoPedr0Maciel/PDV-Smart
+    cd pdv_smart
+    ```
 
-## Construindo a Imagem Docker e subindo o container
+2. Suba o container do Postgres e do PgAdmin utilizando Docker Compose:
 
-Para construir a imagem Docker da aplicação, utilize o seguinte comando:
+    ```bash
+    sudo docker compose up -d
+    ```
 
-```bash
-sudo docker build -t pdv_smart .
-```
-Para subir o container, execute o seguinte comando:
+    Isso cria a rede necessária e sobe os containers do Postgres e PgAdmin.
 
-```bash
-sudo docker run -d --name pdv_smart_container --network pdv_smart_app-network -p 8080:8080 pdv_smart
-```
+3. Construa a imagem Docker da aplicação:
 
-Para subir o container do postgres e do pgadmin, execute:
+    ```bash
+    sudo docker build -t pdv_smart .
+    ```
 
-```bash
-sudo docker compose up -d
-```
+4. Suba o container da aplicação:
 
-Para acessar o banco de dados, basta acessar:
+    ```bash
+    sudo docker run -d --name pdv_smart_container --network pdv_smart_app-network -p 8080:8080 pdv_smart
+    ```
 
-```bash
-http://localhost:8081
-```
+5. Para acessar o banco de dados, basta acessar:
 
-- email: admin@admin.com
-- senha: admin
+    ```text
+    http://localhost:8081
+    ```
+
+    - Email: `admin@admin.com`
+    - Senha: `admin`
 
 ## Criar e conectar o banco de dados
+1. Crie uma nova "connection" (Nova conexão):
 
-1 - Crie uma nova "connection" (New connection)
-
-- Nome da conexão: pdv_docker
-- HOST/ADDRESS: [my_postgres_container]
-- Maintance Database: pdv_smart
-- Port: [5432]
-- Username: postgres
-- Password: postgres
+    - Nome da conexão: `pdv_docker`
+    - HOST/ADDRESS: `[my_postgres_container]`
+    - Maintenance Database: `pdv_smart`
+    - Port: `5432`
+    - Username: `postgres`
+    - Password: `postgres`
