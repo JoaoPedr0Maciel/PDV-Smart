@@ -1,8 +1,13 @@
 package main
 
-import "pdv/routes"
+import (
+	"pdv/database"
+	"pdv/routes"
+)
+
 
 func main() {
-
+	database.InitDB()
+	
 	routes.InitRouter()
 }
