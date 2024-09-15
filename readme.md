@@ -18,7 +18,7 @@ O PDV Smart é uma aplicação desenvolvida com o framework Gin para Go. Este RE
 
     ```bash
     git clone https://github.com/JoaoPedr0Maciel/PDV-Smart
-    cd pdv_smart
+    cd PDV-Smart
     ```
 
 2. Suba o container do Postgres e do PgAdmin utilizando Docker Compose:
@@ -38,7 +38,7 @@ O PDV Smart é uma aplicação desenvolvida com o framework Gin para Go. Este RE
 4. Suba o container da aplicação:
 
     ```bash
-    sudo docker run -d --name pdv_smart_container --network pdv_smart_app-network -p 8080:8080 pdv_smart
+    sudo docker run -d --name pdv-smart_container --network pdv_smart_app-network -p 8080:8080 pdv_smart
     ```
 
 5. Para acessar o banco de dados, basta acessar:
