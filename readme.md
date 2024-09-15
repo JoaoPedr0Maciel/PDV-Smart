@@ -29,19 +29,7 @@ O PDV Smart é uma aplicação desenvolvida com o framework Gin para Go. Este RE
 
     Isso cria a rede necessária e sobe os containers do Postgres e PgAdmin.
 
-3. Construa a imagem Docker da aplicação:
-
-    ```bash
-    sudo docker build -t pdv_smart .
-    ```
-
-4. Suba o container da aplicação:
-
-    ```bash
-    sudo docker run -d --name pdv-smart_container --network pdv_smart_app-network -p 8080:8080 pdv_smart
-    ```
-
-5. Para acessar o banco de dados, basta acessar:
+3. Para acessar o banco de dados, basta acessar:
 
     ```text
     http://localhost:8081
@@ -51,7 +39,7 @@ O PDV Smart é uma aplicação desenvolvida com o framework Gin para Go. Este RE
     - Senha: `admin`
 
 ## Criar e conectar o banco de dados
-1. Crie uma nova "connection" (Nova conexão):
+    Crie uma nova "connection" (Nova conexão):
 
     - Nome da conexão: `pdv_docker`
     - HOST/ADDRESS: `[my_postgres_container]`
@@ -59,3 +47,19 @@ O PDV Smart é uma aplicação desenvolvida com o framework Gin para Go. Este RE
     - Port: `5432`
     - Username: `postgres`
     - Password: `postgres`
+
+4. Construa a imagem Docker da aplicação:
+
+    ```bash
+    sudo docker build -t pdv_smart .
+    ```
+
+5. Suba o container da aplicação:
+
+    ```bash
+    sudo docker run -d --name pdv_smart_container --network pdv-smart_app-network -p 8080:8080 pdv_smart
+    ```
+
+
+
+
